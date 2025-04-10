@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  height: 100%;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/* Columna izquierda: el juego */
+.left-panel {
+  flex: 7; /* El juego ocupa 70% */
+  background: #2a3698;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-panel iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Columna derecha: jugadoras */
+.right-panel {
+  flex: 3; /* Las jugadoras ocupan el 30% */
+  background: #f7f7f7;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel h2 {
+  margin-bottom: 10px;
+}
+
+.players-list {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.players-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.2s;
+}
+
+.players-list li:hover {
+  background-color: #e6eaff;
+}
+
+.players-list li.selected {
+  background-color: #d3e0ff;
+  font-weight: bold;
+}
+
+.answer-actions {
+  margin-top: 10px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+.modal-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #2a3698;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.modal-buttons button:last-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Responsivo en pantallas pequeñas */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    height: 50%;
+  }
+
+  .right-panel {
+    padding: 10px;
+  }
+}
