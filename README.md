@@ -24,7 +24,7 @@ Sigue estos pasos para poner en marcha el juego:
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/jeopardy.git
+   git clone https://github.com/GuadalupeSchajris/jeopardy.git
 Accede al directorio del proyecto:
 
 bash
